@@ -1,0 +1,2 @@
+defaults:
+  - gen_training: synthetic_aml_best

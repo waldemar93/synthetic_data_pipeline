@@ -1,0 +1,2 @@
+defaults:
+  - gen_optimization: optim_aml_ctab

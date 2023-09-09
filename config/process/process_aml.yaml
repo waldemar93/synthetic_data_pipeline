@@ -1,0 +1,34 @@
+raw_filename: "Dresden Study Alliance Leukemia AML - version2_09112022.xlsx"
+remove_columns: ['Sex male', 'sex female', 'Pat', 'RFSTM', 'PBB', 'BMB', 'LDH', 'FLT3R', 'GATA1']
+remove_rows_for_nan_column: ['WBC', 'HB', 'PLT']
+map_columns: {"SEX": {'m': 1, 'f': 0}}
+bool_columns: ['SEX', 'FEV', 'EXAML', 'CGNK', 'CGCX', 'CR1', 'OSSTAT', 'EFSSTAT', 'RFSSTAT', 'ASXL1', 'ATRX', 'BCOR',
+               'BCORL1', 'BRAF', 'CALR', 'CBL', 'CBLB', 'CDKN2A', 'CEBPA', 'CEBPADM', 'CEBPA.bZIP',
+               'CEBPA.bZIP.inframe', 'CEBPA.TAD', 'CSF3R', 'CUX1', 'DNMT3A', 'ETV6', 'EZH2', 'FBXW7', 'FLT3I', 'FLT3T',
+               'GATA2', 'GNAS', 'HRAS', 'IDH1', 'IDH2', 'IKZF1', 'JAK2', 'KDM6A', 'KIT', 'KRAS', 'MPL', 'MYD88',
+               'NOTCH1', 'NPM1', 'NRAS', 'PDGFRA', 'PTEN', 'PHF6', 'PTPN11', 'RAD21', 'RUNX1', 'SETBP1', 'SF3B1',
+               'SMC1A', 'SMC3', 'SRSF2', 'STAG2', 'TET2', 'TP53', 'U2AF1', 'WT1', 'ZRSR2', 'inv16_t16.16', 't8.21',
+               't.6.9..p23.q34.', 'inv.3..q21.q26.2.', 'minus.5', 'del.5q.', 't.9.22..q34.q11.', 'minus.7', 'minus.17',
+               't.v.11..v.q23.', 'abn.17p.', 't.9.11..p21.23.q23.', 't.3.5.', 't.6.11.', 't.10.11.',
+               't.11.19..q23.p13.', 'del.7q.', 'del.9q.', 'trisomy 8', 'trisomy 21', 'minus.Y', 'minus.X']
+bool_column_datatype: "int"
+cat_columns: ['AMLSTAT']
+int_columns: ['AGE']
+float_columns: ['OSTM', 'EFSTM', 'WBC', 'HB', 'PLT']
+outcome_columns: ['CR1', 'OSTM', 'OSSTAT', 'EFSTM', 'EFSSTAT', 'RFSSTAT']
+nan_cat_value: "empty_val"
+nan_bool_value: -1
+nan_int_value: None
+nan_cont_value: None
+scaler_for_num_col: None
+experiment_name: "synthetic_aml"
+overwrite_data_folder_if_exists: False
+create_columns_json: True
+create_folder_for_generative_models: ['CTAB-GAN+', 'CTGAN', 'TVAE', 'TAB_DDPM', 'SURVIVAL_GAN', 'SURVIVAL_NFLOW',
+                                      'SURVIVAL_CTGAN', 'RTVAE']
+split_cols: ['CR1', 'OSSTAT', 'EFSSTAT', 'RFSSTAT']
+split_seed: 1
+test_ratio: 0.2
+remove_rows_for_lambda_conditions: ["row['OSTM']<row['EFSTM']"]
+preprocess_lambda: ["row['EFSTM'] = row['OSTM'] - row['EFSTM']"]
+preprocess_lambda_for_eval: ["row['EFSTM'] = row['OSTM'] - row['EFSTM']"]

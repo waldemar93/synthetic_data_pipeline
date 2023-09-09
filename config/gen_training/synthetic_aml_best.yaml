@@ -1,0 +1,7 @@
+experiment_name: "synthetic_aml"
+train_models: ['CTAB-GAN+', 'CTGAN', 'TVAE', 'TAB_DDPM', 'SURVIVAL_GAN', 'SURVIVAL_NFLOW', 'SURVIVAL_CTGAN', 'RTVAE']
+train_configs: ["CTAB-GAN+_70_1", "CTGAN_70_1", "TVAE_70_1", "TAB_DDPM_70_1", "SURVIVAL_GAN_70_1",
+                "SURVIVAL_NFLOW_70_1", "SURVIVAL_CTGAN_70_1", "RTVAE_70_1"]
+train_seeds: [0, 1, 2, 3, 4]
+filenames: ["best_ctab", "best_ctgan", "best_tvae", "best_tab_ddpm", "best_sgan", "best_snflow", "best_sctgan",
+            "best_rtvae"]

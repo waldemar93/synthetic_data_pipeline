@@ -1,0 +1,30 @@
+experiment_name: "synthetic_aml"
+optimize_models: ["SURVAE"]
+optimization_sampler: "TPESampler"
+optimization_trials: 70
+optimization_seed: 11
+optimization_metrics: ["basic_statistical_measure_num", "log_transformed_correlation_score",
+                       "regularized_support_coverage", "discriminator_measure_rf", "k_means_score", "ml_efficiency_cat",
+                       "ml_efficiency_cat", "survival_auc_opt", "survival_auc_abs_opt", "survival_sightedness"]
+optimization_metrics_weights: [1, 1, 1, 1, 1, 2, 2, 1, 1, 1]
+optimization_metric6_params:
+  predict_col: "CR1"
+  metric: "mcc"
+  relative: false
+  filename_params_json: "CR1_mcc_200_1"
+optimization_metric7_params:
+  predict_col: "OSTM_2y"
+  metric: "mcc"
+  relative: false
+  create_column_lambda: "lambda row: 0 if row['OSTM'] >= 24 else 1"
+  filename_params_json: "OSTM_2y_mcc_200_1"
+filenames: ["SURVAE_70_1"]
+optimization_metric8_params:
+  survival_target_col: "OSSTAT"
+  survival_time_to_event_col: "OSTM"
+optimization_metric9_params:
+  survival_target_col: "OSSTAT"
+  survival_time_to_event_col: "OSTM"
+optimization_metric10_params:
+  survival_target_col: "OSSTAT"
+  survival_time_to_event_col: "OSTM"

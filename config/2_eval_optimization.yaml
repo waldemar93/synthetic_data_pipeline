@@ -1,0 +1,2 @@
+defaults:
+  - eval_optimization: synthetic_aml_cr1_1

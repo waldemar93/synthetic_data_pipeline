@@ -1,0 +1,9 @@
+experiment_name: "synthetic_aml"
+predict_column: "OSTM_2y"
+create_column_lambda: "lambda row: 0 if row['OSTM'] >= 24 else 1"
+optimization_metric: "f1"
+optimization_direction: "maximize"
+optimization_sampler: "TPESampler"
+optimization_trials: 200
+optimization_seed: 1
+filename: "OSTM_2y_200_1"

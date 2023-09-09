@@ -1,0 +1,2 @@
+defaults:
+  - eval_gen: synthetic_aml_evaluate

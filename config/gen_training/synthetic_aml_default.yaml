@@ -1,0 +1,5 @@
+experiment_name: "synthetic_aml"
+train_models: ['CTAB-GAN+', 'CTGAN', 'TVAE', 'SURVIVAL_GAN', 'SURVIVAL_NFLOW', 'SURVIVAL_CTGAN', 'RTVAE']
+train_configs: ["default", "default", "default", "default", "default", "default", "default"]
+train_seeds: [0, 1, 2, 3, 4]
+filenames: ["default", "default", "default", "default", "default", "default", "default"]

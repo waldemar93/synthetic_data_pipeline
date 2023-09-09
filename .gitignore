@@ -1,0 +1,11 @@
+data
+models
+venv
+.idea
+__pycache__/
+experiments/
+src/outputs
+outputs/
+src_others/tab_ddpm/__pycache__/
+src_others/CTGAN/__pycache__/
+src_others/CTAB_GAN_Plus/__pycache__/

@@ -1,0 +1,5 @@
+experiment_name: "synthetic_aml"
+hamming_dist_num_bins: 10
+synthetic_data:
+  SURVIVAL_NFLOW: ["best_70_1_t1_s2"]
+  CTAB-GAN+: ["best_70_1_t2_s0"]

@@ -1,0 +1,9 @@
+experiment_name: "synthetic_aml"
+predict_column: "CR1"
+create_column_lambda: ""
+optimization_metric: "f1"
+optimization_direction: "maximize"
+optimization_sampler: "TPESampler"
+optimization_trials: 200
+optimization_seed: 1
+filename: "CR1_200_1"

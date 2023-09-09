@@ -1,0 +1,34 @@
+experiment_name: "synthetic_aml"
+models: ["CTAB-GAN+", "SURVIVAL_NFLOW"]
+mode: "all"
+sampling_seeds: [0, 1, 2]
+synth_preprocess_lambda: ["row['EFSTM'] = row['OSTM'] - row['EFSTM']"]
+synth_raw_size: 2000
+synth_remove_lambda: ["df_synth['EFSTM'] >= 0"]
+synth_final_size: 1606
+output: "json"
+metrics: ["basic_statistical_measure_num", "log_transformed_correlation_score",
+          "regularized_support_coverage", "discriminator_measure_rf", "k_means_score", "ml_efficiency_cat",
+          "ml_efficiency_cat", "survival_auc_opt", "survival_auc_abs_opt", "survival_sightedness"]
+metric6_params:
+  name: "CR1_prediction_MCC"
+  predict_col: "CR1"
+  metric: "mcc"
+  relative: false
+  filename_params_json: "CR1_mcc_200_1"
+metric7_params:
+  name: "OSTM_2y_prediction_MCC"
+  predict_col: "OSTM_2y"
+  metric: "mcc"
+  relative: false
+  create_column_lambda: "lambda row: 0 if row['OSTM'] >= 24 else 1"
+  filename_params_json: "OSTM_2y_mcc_200_1"
+metric8_params:
+  survival_target_col: "OSSTAT"
+  survival_time_to_event_col: "OSTM"
+metric9_params:
+  survival_target_col: "OSSTAT"
+  survival_time_to_event_col: "OSTM"
+metric10_params:
+  survival_target_col: "OSSTAT"
+  survival_time_to_event_col: "OSTM"
